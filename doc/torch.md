@@ -71,6 +71,78 @@ Torch包含用于多维张量的数据结构，并定义了对这些张量进行
 | polar                | 构建一个复数张量，其元素是与极坐标中的绝对值 `abs` 和角度 `angle` 对应的笛卡尔坐标。 |
 | heaviside            | 计算输入中每个元素的 Heaviside 阶跃函数。                    |
 
+## Indexing, Slicing, Joining, Mutating Ops
+
+| 方法             | 说明                                                         |
+| ---------------- | ------------------------------------------------------------ |
+| adjoint          | 返回一个张量的视图，该视图是共轭的（conjugated）并且最后两个维度被转置。 |
+| argwhere         | 返回一个张量，其中包含输入张量中所有非零元素的索引。         |
+| cat              | 在给定的维度上连接（拼接）给定的 seq 张量序列。              |
+| concat           | 是 torch.cat() 的别名。                                      |
+| concatenate      | 是 torch.cat() 的别名。                                      |
+| conj             | 返回输入张量的一个视图，其中共轭位被翻转。                   |
+| chunk            | 尝试将一个张量分割成指定数量的块。                           |
+| dsplit           | 根据指定的 indices_or_sections，将一个具有三个或更多维度的输入张量进行深度分割，得到多个张量。 |
+| column_stack     | 通过将一组张量（tensors）在水平方向堆叠来创建一个新的张量。  |
+| dstack           | 按顺序沿第三轴（深度方向）堆叠张量。                         |
+| gather           | 沿着由 dim 指定的轴收集（或聚合）数值。                      |
+| hsplit           | 根据指定的 indices_or_sections，将一个具有一维或多维的输入张量水平分割成多个张量。 |
+| hstack           | 按顺序水平（列方向）堆叠张量。                               |
+| index_add        | 有关函数描述，请参阅 index_add_()。                          |
+| index_copy       | 请参阅 index_add_() 获取函数描述。                           |
+| index_reduce     | 请参阅 index_reduce_() 以获取函数描述。                      |
+| index_select     | 返回一个新的张量，它使用 LongTensor 类型的索引（index）在维度 dim 上对输入张量进行索引。 |
+| masked_select    | 返回一个新的一维张量，它根据布尔掩码（BoolTensor）mask 对输入张量进行索引。 |
+| movedim          | 将输入张量中的维度（或维度）从源位置移动到目标位置。         |
+| moveaxis         | 是 torch.movedim() 的别名。                                  |
+| narrow           | 返回一个新的张量，它是输入张量的缩小版本。                   |
+| narrow_copy      | 与 Tensor.narrow() 相同，除了这会返回一个副本而不是共享存储。 |
+| nonzero          |                                                              |
+| permute          | 返回原始张量 input 维度重新排列后的视图。                    |
+| reshape          | 返回一个与输入具有相同数据和元素数量的张量，但具有指定的形状。 |
+| row_stack        | 是 torch.vstack() 的别名。                                   |
+| select           | 在给定索引处沿着选定的维度对输入张量进行切片。               |
+| scatter          | 这是 torch.Tensor.scatter_() 的非就地（out-of-place）版本。  |
+| diagonal_scatter | 在 input 张量的对角线元素（相对于 dim1 和 dim2）上嵌入 src 张量的值。 |
+| select_scatter   | 将 src 张量的值嵌入到 input 张量的给定索引处。               |
+| slice_scatter    | 在给定维度上，将 src 张量的值嵌入到 input 张量中。           |
+| scatter_add      | 这是 torch.Tensor.scatter_add_() 的非就地（out-of-place）版本。 |
+| scatter_reduce   | 这是 torch.Tensor.scatter_reduce_() 的非就地版本。           |
+| split            | 将张量分割成块。                                             |
+| squeeze          | 返回一个将输入中所有指定维度大小为1的维度移除的张量。        |
+| stack            | 沿着新的维度连接一系列张量。                                 |
+| swapaxes         | 是 torch.transpose() 的别名。                                |
+| swapdims         | 是 torch.transpose() 的别名。                                |
+| t                | 预期输入是不大于2维的张量，然后对维度0和1进行转置。          |
+| take             | 返回一个新的张量，其中包含输入张量在给定索引处的元素。       |
+| take_along_dim   | 在给定维度 dim 上，根据 indices 中的一维索引从 input 中选择值。 |
+| tensor_split     | 根据由 indices_or_sections 指定的索引或分段数量，沿着维度 dim 将一个张量分割成多个子张量，这些子张量都是 input 的视图。 |
+| tile             | 通过重复 input 中的元素来构建一个张量。                      |
+| transpose        | 返回一个与 input 相反的张量。                                |
+| unbind           | 移除一个张量的维度。                                         |
+| unsqueeze        | 返回一个在指定位置插入了大小为一的维度的新张量。             |
+| vsplit           | 根据指定的 indices_or_sections，将一个具有两个或更多维度的输入张量垂直分割成多个张量。 |
+| vstack           | 垂直（行方向）按顺序堆叠张量。                               |
+| where            | 根据条件（condition），从 input 或 other 中选择元素，并返回一个张量。 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
